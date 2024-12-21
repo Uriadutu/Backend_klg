@@ -200,7 +200,9 @@ export const deleteKlenteng = async (req, res) => {
     if (!klenteng) {
       return res.status(404).json({ message: "Data tidak ditemukan" });
     }
+    const user = await User.findOne({ where: { id : klenteng.userId } });
 
+    await user.destroy();
     await klenteng.destroy();
     res.status(200).json({ message: "Data berhasil dihapus" });
   } catch (error) {
