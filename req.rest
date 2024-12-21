@@ -1,0 +1,36 @@
+###
+DELETE http://localhost:5000/satker/1
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "nama",
+  "password": "12345678",
+  "confirmPassword": "12345678"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+###
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+  "username": "super",
+  "password": "123456",
+  "confirmPassword": "123456",
+  "role" : "SuperAdmin"
+}
+
+
+###
+GET http://localhost:5000/me
