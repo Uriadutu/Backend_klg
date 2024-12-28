@@ -1,5 +1,5 @@
 import User from "../Models/UserModel.js";
-
+import User from "../Models/UserModel.js";
 export const verifyUser = async (req, res, next) =>{
     if(!req.session.userId){
         return res.status(401).json({msg: "Mohon login ke akun Anda!"});
